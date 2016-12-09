@@ -1,0 +1,100 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  height: 70px;
+  position: relative;
+  width: 200px;
+}
+
+.menu-item ul {
+  display: none;
+  left: -99999px;
+  position: absolute;
+  top: 100%;
+}
+
+.menu-item:hover {
+  cursor: pointer;
+}
+
+.menu-item:hover > ul {
+  display: block;
+  left: 100%;
+  top: -1px;
+}
+
+#menu ul {
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * The make it purty stuff
+ */
+
+ body {
+   font: 1.2em/1.4 Geneva, Tahoma, Verdana, sans-serif;
+ }
+
+ /**
+  * the <a> takes up the full size of the menu-item to provide a full click area
+  */
+ .menu-item a {
+   display: block;
+   height: 100%;
+ }
+
+ /**
+  * the <span> is centered inside the <a>, using this css trick
+  */
+ .menu-item span {
+   display: block;
+   position: relative;
+   text-align: center;
+   top: 50%;
+   transform: translateY(-50%);
+ }
+
+ .menu-item {
+   border-bottom: 1px solid black;
+ }
+
+  #menu .menu-item:last-child {
+    border-bottom: none;
+  }
+
+  #menu ul {
+    background-color: pink;
+  }
+
+  #menu ul ul {
+    background-color: violet;
+  }
+
+  #menu ul ul ul {
+    background-color: rgb(176, 254, 191);
+  }
+
+  /**
+   * just adding a little hover effect to the menu items to give them a bit more coolness
+   */
+  .menu-item:after {
+    background:rgba(0,0,0,0.1);
+    content: '\A';
+    left:0;
+    height:100%;
+    opacity: 0;
+    position: absolute;
+    top:0;
+    transition: all 0.3s;
+    width: 100%;
+  }
+
+  .menu-item:hover:after {
+    opacity: 1;
+  }
